@@ -1,0 +1,418 @@
+.content
+{
+    .page
+    {
+        .widgets
+        {
+            .text_two_columns_widget
+            {
+                @include clearfix;
+                margin: 25px 0;
+
+                .column
+                {
+                    box-sizing: border-box;
+                    width: 50%;
+                    float: left;
+
+                    > :first-child
+                    {
+                        margin-top: 0;
+                    }
+
+                    > :last-child
+                    {
+                        margin-bottom: 0;
+                    }
+
+                    &.first
+                    {
+                        padding: 0 15px 0 0;
+                    }
+
+                    &.second
+                    {
+                        padding: 0 0 0 15px;
+                    }
+                }
+            }
+
+            .text_three_columns_widget
+            {
+                @include clearfix;
+                margin: 25px 0;
+
+                .column
+                {
+                    box-sizing: border-box;
+                    width: 33.33%;
+                    float: left;
+
+                    > :first-child
+                    {
+                        margin-top: 0;
+                    }
+
+                    > :last-child
+                    {
+                        margin-bottom: 0;
+                    }
+
+                    &.first
+                    {
+                        padding: 0 13px 0 0;
+                    }
+
+                    &.second
+                    {
+                        padding: 0 7px 0 7px;
+                    }
+
+                    &.third
+                    {
+                        padding: 0 0 0 13px;
+                    }
+                }
+            }
+
+            .google_map_widget
+            {
+                margin: 24px 0;
+
+                .map
+                {
+                    width: 100%;
+                    height: 350px;
+                }
+            }
+
+            .vimeo_video_widget
+            {
+                margin: 25px 0;
+            }
+
+            .sermon_archive_widget
+            {
+                margin: 25px 0;
+
+                table
+                {
+                    width: 100%;
+
+                    thead
+                    {
+                        tr
+                        {
+                            th
+                            {
+                                padding: 0 5px 5px 5px;
+                                font-family: TrajanProBold;
+                                font-weight: normal;
+                                -webkit-font-smoothing: antialiased;
+                                color: #3c2d23;
+                                font-size: 18px;
+                                line-height: 100%;
+                                text-align: left;
+                            }
+                        }
+                    }
+
+                    tbody
+                    {
+                        tr
+                        {
+                            td
+                            {
+                                font-size: 14px;
+                                line-height: 120%;
+                                padding: 5px;
+                                border-top: darken(#cec7ab, 10%) dotted 1px;
+
+                                a
+                                {
+                                    text-decoration: none;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .description
+                {
+                    margin: 15px 0;
+                }
+
+                ul.details
+                {
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    border-bottom: darken(#cec7ab, 10%) dotted 1px;
+
+                    li
+                    {
+                        position: relative;
+                        padding: 5px 0 5px 90px;
+                        border-top: darken(#cec7ab, 10%) dotted 1px;
+
+                        h3
+                        {
+                            margin: 0;
+                            width: 90px;
+                            position: absolute;
+                            left: 0;
+                            top: 5px;
+                            font-size: 14px;
+                            line-height: 150%;
+                        }
+
+                        p
+                        {
+                            margin: 0;
+                            font-size: 14px;
+                            line-height: 150%;
+                        }
+                    }
+                }
+
+                .formats
+                {
+                    margin: 25px 0 0 0;
+
+                    .tab_navigation
+                    {
+                        overflow: hidden;
+                        list-style: none;
+                        margin: 0;
+                        padding: 10px 0 0 15px;
+                        background: darken(#cec7ab, 10%);
+                        border-radius: 2px 2px 0 0;
+
+                        li
+                        {
+                            float: left;
+                            padding: 5px 15px 3px 15px;
+                            color: darken(#cec7ab, 35%);
+                            font-weight: bold;
+                            font-size: 13px;
+                            text-decoration: none;
+                            border-radius: 1px 1px 0 0;
+                            cursor: pointer;
+
+                            &:hover
+                            {
+                                color: white;
+                            }
+
+                            &.selected
+                            {
+                                color: white;
+                                background: #cec7ab;
+                            }
+                        }
+                    }
+
+                    .tab_content
+                    {
+                        list-style: none;
+                        margin: 0;
+                        padding: 15px;
+                        background: #cec7ab;
+                        border-radius: 0 0 2px 2px;
+
+                        li
+                        {
+                            display: none;
+
+                            &.selected
+                            {
+                                display: block;
+                            }
+
+                            &.audio
+                            {
+                                audio
+                                {
+                                    margin: 10px 0 20px 0;
+                                    display: block;
+                                }
+
+                                a
+                                {
+                                    display: inline-block;
+                                    padding: 5px 15px;
+                                    background: white;
+                                    border-radius: 3px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+
+            .calendar_widget
+            {
+                margin: 20px 0;
+
+                .calendar
+                {
+                    h2
+                    {
+                        margin-bottom: -5px;
+                    }
+
+                    .controls
+                    {
+                        position: relative;
+                        text-align: right;
+                        font-size: 0;
+                        line-height: 0;
+
+                        a
+                        {
+                            display: inline-block;
+                            margin: 0 1px 2px 2px;
+                            padding: 8px 10px 6px 10px;
+
+                            font-family: MyriadProSemiBold;
+                            font-weight: normal;
+                            -webkit-font-smoothing: antialiased;
+                            color: white;
+                            font-size: 12px;
+                            line-height: 100%;
+                            text-decoration: none;
+
+                            border-radius: 2px;
+                            background: darken(#cec7ab, 10%);
+
+                            &:hover
+                            {
+                                background: darken(#cec7ab, 25%);
+                            }
+                        }
+                    }
+
+                    table
+                    {
+                        width: 100%;
+                        border-collapse: separate;
+
+                        tbody
+                        {
+                            tr
+                            {
+                                td
+                                {
+                                    width: 14.2857142857143%;
+                                    height: 60px;
+                                    border-color: white;
+                                    border-style: solid;
+                                    border-width: 1px 1px 0 0;
+                                    background: lighten(#cec7ab, 20%);
+
+                                    &.blank
+                                    {
+                                        background: none;
+                                    }
+
+                                    &.today
+                                    {
+                                        background: lighten(#cec7ab, 12%);
+
+                                        .day
+                                        {
+                                            .number
+                                            {
+                                                color: lighten(#746a53, 5%);
+                                            }
+                                        }
+                                    }
+
+                                    .day
+                                    {
+                                        position: relative;
+                                        padding: 25px 4px 5px 5px;
+                                        font-size: 11px;
+                                        line-height: 100%;
+
+                                        .number
+                                        {
+                                            display: block;
+                                            position: absolute;
+                                            right: 0;
+                                            top: 0;
+                                            height: 16px;
+                                            color: lighten(#746a53, 15%);
+                                            padding: 6px 6px 0 0;
+                                        }
+
+                                        .event
+                                        {
+                                            position: relative;
+                                            margin: 0 0 5px 0;
+                                            color: #746a53;
+
+                                            a
+                                            {
+                                                color: #746a53;
+                                                text-decoration: none;
+
+                                                &:hover
+                                                {
+                                                    text-decoration: underline;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .event
+                {
+                    .date
+                    {
+                        font-family: MinionProRegular;
+                        font-weight: normal;
+                        color: lighten(#746a53, 10%);
+                        margin: 25px 0;
+                        font-size: 14px;
+                        line-height: 100%;
+                    }
+
+                    .description
+                    {
+                        margin: 25px 0;
+                    }
+
+                    .back
+                    {
+                        a
+                        {
+                            display: inline-block;
+                            padding: 12px 15px 8px 15px;
+                            font-family: MinionProRegular;
+                            font-weight: normal;
+                            color: white;
+                            font-size: 14px;
+                            line-height: 100%;
+                            text-decoration: none;
+                            border-radius: 2px;
+                            background: lighten(#746a53, 10%);
+
+                            &:hover
+                            {
+                                background: lighten(#746a53, 5%);
+                            }
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}
