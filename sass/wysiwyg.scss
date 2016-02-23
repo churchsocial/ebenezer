@@ -1,5 +1,4 @@
-.wysiwyg
-{
+.wysiwyg {
     clear: both;
     overflow: hidden;
     padding: 15px 40px 30px 40px;
@@ -7,20 +6,16 @@
     font-size: 15px;
     line-height: 175%;
 
-    a
-    {
+    a {
         color: #872d18;
         text-decoration: underline;
 
-        &:hover
-        {
+        &:hover {
             color: black;
         }
     }
 
-
-    h1
-    {
+    h1 {
         margin: 25px 0;
         font-family: TrajanProBold;
         font-weight: normal;
@@ -30,20 +25,17 @@
         font-weight: normal;
         color: #3c2d23;
 
-        a
-        {
+        a {
             color: #3c2d23;
             text-decoration: none;
 
-            &:hover
-            {
+            &:hover {
                 text-decoration: underline;
             }
         }
     }
 
-    h2
-    {
+    h2 {
         position: relative;
         top: 10px;
         margin: 25px 0 25px 0;
@@ -54,7 +46,6 @@
         font-size: 19px;
         line-height: 100%;
     }
-
 
     .alignnone {
         margin: 5px 20px 20px 0;
@@ -67,7 +58,7 @@
     }
 
     .alignright {
-        float:right;
+        float: right;
         margin: 5px 0 20px 20px;
     }
 
@@ -93,13 +84,15 @@
     a img.aligncenter {
         display: block;
         margin-left: auto;
-        margin-right: auto
+        margin-right: auto;
     }
 
     .wp-caption {
         background: #fff;
         border: 1px solid #f0f0f0;
-        max-width: 96%; /* Image does not overflow the content area */
+        max-width: 96%;
+
+        /* Image does not overflow the content area */
         padding: 5px 3px 10px;
         text-align: center;
     }
