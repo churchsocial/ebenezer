@@ -19,23 +19,17 @@
         <ul class="quick_links">
             <?php if (get_theme_mod('facebook')): ?>
                 <li class="facebook">
-                    <a href="<?=get_theme_mod('facebook')?>" target="_blank">
-                        Facebook
-                    </a>
+                    <a href="<?=get_theme_mod('facebook')?>">Facebook</a>
                 </li>
             <?php endif ?>
             <?php if (get_theme_mod('twitter')): ?>
                 <li class="twitter">
-                    <a href="<?=get_theme_mod('twitter')?>" target="_blank">
-                        Twitter
-                    </a>
+                    <a href="<?=get_theme_mod('twitter')?>">Twitter</a>
                 </li>
             <?php endif ?>
             <?php if (get_theme_mod('member_login')): ?>
                 <li class="login">
-                    <a href="<?=get_theme_mod('member_login')?>" rel="nofollow">
-                        Member Login
-                    </a>
+                    <a href="<?=get_theme_mod('member_login')?>">Member Login</a>
                 </li>
             <?php endif ?>
         </ul>
@@ -44,12 +38,9 @@
 </div>
 
 <div class="menu_wrap">
-    <?php wp_nav_menu([
-        'theme_location' => 'main_menu',
-        'depth' => 1,
-        'menu_class' => 'menu',
-        'container' => '',
-    ]) ?>
+    <div class="menu">
+        <?=get_main_menu()?>
+    </div>
 </div>
 
 <div class="content_wrap">
@@ -79,8 +70,12 @@
                 <?php endif ?>
             </div>
 
-            <div class="sub_menu_wrap">
-                <?=get_sub_menu()?>
-            </div>
+            <?php if (get_sub_menu()): ?>
+                <div class="sub_menu_wrap">
+                    <div class="sub_menu">
+                        <?=get_sub_menu()?>
+                    </div>
+                </div>
+            <?php endif ?>
 
             <div class="wysiwyg">

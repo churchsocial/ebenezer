@@ -4,8 +4,8 @@
 register_nav_menu('main_menu', 'Main Menu');
 
 // Register sidebars
-register_sidebar(['name' => 'Page']);
-register_sidebar(['name' => 'Blog']);
+register_sidebar(['id' => 'page-sidebar', 'name' => 'Page']);
+register_sidebar(['id' => 'blog-sidebar', 'name' => 'Blog']);
 
 // Register custom images sizes
 add_theme_support('post-thumbnails');
@@ -54,19 +54,36 @@ add_filter('wp_nav_menu_objects', function ($sorted_menu_items) {
     }
 
     return $sorted_menu_items;
-
 });
 
-// Generate sub menu
+// Get main menu
+function get_main_menu($depth = 1)
+{
+    return wp_nav_menu([
+        'theme_location' => 'main_menu',
+        'depth' => $depth,
+        'menu_class' => '',
+        'container' => '',
+        'echo' => false,
+    ]);
+}
+
+// Get sub menu
 function get_sub_menu()
 {
     global $post;
     global $menu_item_id;
 
     $menu_items = [];
+    $locations = get_nav_menu_locations();
+    $main_menu_items = wp_get_nav_menu_items($locations['main_menu']);
 
-    foreach (wp_get_nav_menu_items('Main Menu') as $menu_item) {
-        if ((string) $menu_item->ID === (string) $menu_item_id or (string) $menu_item->menu_item_parent === (string) $menu_item_id) {
+    if (!$main_menu_items) {
+        return '';
+    }
+
+    foreach ($main_menu_items as $menu_item) {
+        if ((string) $menu_item->menu_item_parent === (string) $menu_item_id) {
             $menu_items[] = [
                 'url' => $menu_item->url,
                 'title' => $menu_item->title,
@@ -75,11 +92,11 @@ function get_sub_menu()
         }
     }
 
-    if (count($menu_items) === 1) {
+    if (count($menu_items) <= 1) {
         return '';
     }
 
-    return '<ul class="sub_menu">'.array_reduce($menu_items, function ($html, $item) {
+    return '<ul>'.array_reduce($menu_items, function ($html, $item) {
         $html .= $item['selected'] ? '<li class="selected">' : '<li>';
         $html .= '<a href="'.$item['url'].'">'.$item['title'].'</a>';
         $html .= '</li>';

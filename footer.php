@@ -18,9 +18,11 @@
                     <?php endif ?>
                 </ul>
             </div>
-            <ul class="dynamic">
-                <?php dynamic_sidebar('Page'); ?>
-            </ul>
+            <?php if (is_active_sidebar('page-sidebar')): ?>
+                <ul class="dynamic">
+                    <?php dynamic_sidebar('page-sidebar') ?>
+                </ul>
+            <?php endif ?>
         </div>
     </div>
 </div>

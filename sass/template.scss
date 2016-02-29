@@ -220,33 +220,35 @@ html {
             }
 
             .sub_menu {
-                @include clearfix;
+                ul {
+                    @include clearfix;
 
-                list-style: none;
-                margin: 0;
-                padding: 15px 30px 10px 30px;
+                    list-style: none;
+                    margin: 0;
+                    padding: 15px 30px 10px 30px;
 
-                li {
-                    float: left;
+                    li {
+                        float: left;
 
-                    a {
-                        display: block;
-                        margin: 0 15px 0 0;
-                        height: 20px;
-                        color: #cbb9a6;
-                        font-size: 13px;
-                        line-height: 20px;
-                        font-weight: bold;
-                        text-decoration: none;
-
-                        &:hover {
-                            color: #f7f3e7;
-                        }
-                    }
-
-                    &.selected {
                         a {
-                            color: #f7f3e7;
+                            display: block;
+                            margin: 0 15px 0 0;
+                            height: 20px;
+                            color: #cbb9a6;
+                            font-size: 13px;
+                            line-height: 20px;
+                            font-weight: bold;
+                            text-decoration: none;
+
+                            &:hover {
+                                color: #f7f3e7;
+                            }
+                        }
+
+                        &.selected {
+                            a {
+                                color: #f7f3e7;
+                            }
                         }
                     }
                 }
