@@ -4,9 +4,8 @@ html {
 
 .header_wrap {
     position: relative;
-    height: 137px;
-    background: #882911;
     overflow: hidden;
+    background: #882911 url(../img/header_bg_texture.jpg) center bottom no-repeat;
 }
 
 .header {
@@ -14,29 +13,78 @@ html {
     max-width: 1200px;
     margin: 0 auto;
 
-    .texture {
-        width: 1800px;
-        position: absolute;
-        height: 137px;
-        top: 0;
-        left: 0%;
-        margin: 0 0 0 -350px;
-        background: url(../img/header_bg_texture.jpg) 0 0 no-repeat;
-    }
-
     .logo {
         position: relative;
-        font-family: TrajanProBold;
-        font-weight: normal;
-        -webkit-font-smoothing: antialiased;
-        font-size: 25px;
-        line-height: 100%;
-        color: white;
-        text-shadow: 2px 2px #73321b;
-        text-decoration: none;
 
-        &:hover {
-            text-shadow: 2px 2px 3px darken(#73321b, 12%);
+        &.text {
+            display: block;
+            text-decoration: none;
+
+            span {
+                color: white;
+                font-family: TrajanProBold;
+                font-weight: normal;
+                font-size: 25px;
+                line-height: 100%;
+                text-shadow: 2px 2px #73321b;
+                -webkit-font-smoothing: antialiased;
+
+                &:hover {
+                    text-shadow: 2px 2px 3px darken(#73321b, 12%);
+                }
+            }
+
+            @media only screen and (max-width: 749px) {
+                margin: 25px 0 0 0;
+                text-align: center;
+            }
+
+            @media only screen and (min-width: 750px) {
+                position: absolute;
+                left: 25px;
+                top: 25px;
+                height: 130px;
+                width: 700px;
+                line-height: 130px;
+
+                span {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+        }
+
+        &.image {
+            @media only screen and (max-width: 749px) {
+                img {
+                    display: block;
+                    margin: 25px auto 0 auto;
+                    width: 80%;
+                    height: auto;
+                    max-width: 360px;
+                }
+            }
+
+            @media only screen and (min-width: 750px) {
+                position: absolute;
+                left: 0;
+                top: 35px;
+                height: 80px;
+                width: 380px;
+                font-size: 0;
+
+                .helper {
+                    display: inline-block;
+                    height: 100%;
+                    vertical-align: middle;
+                }
+
+                img {
+                    vertical-align: middle;
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
         }
     }
 
@@ -46,6 +94,7 @@ html {
         margin: 0;
         padding: 0;
         overflow: hidden;
+        font-size: 0;
 
         li {
             float: left;
@@ -472,7 +521,6 @@ html {
 }
 
 @media only screen and (max-width: 549px) {
-    .header_wrap,
     .menu_wrap {
         padding: 0 5px;
     }
@@ -522,24 +570,19 @@ html {
 
 @media only screen and (max-width: 749px) {
     .header_wrap {
-        box-sizing: border-box;
-        width: 100%;
-        display: table;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        background-position: 30%;
     }
 
     .header {
-        display: table-cell;
-        vertical-align: middle;
-
-        .logo {
-            display: block;
-            width: 100%;
-            text-align: center;
-        }
-
         .quick_links {
-            width: 204px;
-            margin: 0 auto 10px auto;
+            text-align: center;
+
+            li {
+                float: none;
+                display: inline-block;
+            }
         }
     }
 
@@ -581,7 +624,8 @@ html {
     .header_wrap,
     .menu_wrap,
     .content_wrap {
-        padding: 0 35px;
+        padding-left: 35px;
+        padding-right: 35px;
     }
 }
 
@@ -589,13 +633,14 @@ html {
     .header_wrap,
     .menu_wrap,
     .content_wrap {
-        padding: 0 50px;
+        padding-left: 50px;
+        padding-right: 50px;
     }
 }
 
 @media only screen and (min-width: 750px) {
     .header {
-        height: 137px;
+        height: 150px;
 
         .logo {
             position: absolute;

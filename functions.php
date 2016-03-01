@@ -205,4 +205,14 @@ add_action('customize_register', function ($wp_customize) {
             ],
         ])
     );
+
+    $wp_customize->add_setting('logo');
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control($wp_customize, 'logo', [
+            'label' => 'Logo',
+            'section' => 'title_tagline',
+            'settings' => 'logo',
+            'priority' => 1,
+        ])
+    );
 });

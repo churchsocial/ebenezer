@@ -15,7 +15,6 @@
 
 <div class="header_wrap">
     <div class="header">
-        <div class="texture"></div>
         <ul class="quick_links">
             <?php if (get_theme_mod('facebook')): ?>
                 <li class="facebook">
@@ -33,7 +32,16 @@
                 </li>
             <?php endif ?>
         </ul>
-        <a href="/" class="logo"><?php bloginfo('blogname')?></a>
+        <?php if (get_theme_mod('logo')): ?>
+            <a class="logo image" href="/">
+                <div class="helper"></div>
+                <img src="<?=get_theme_mod('logo')?>" alt="<?php bloginfo('blogname')?>">
+            </a>
+        <?php else: ?>
+            <a class="logo text" href="/">
+                <span><?php bloginfo('blogname')?></span>
+            </a>
+        <?php endif ?>
     </div>
 </div>
 
