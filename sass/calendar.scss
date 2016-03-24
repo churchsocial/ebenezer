@@ -1,0 +1,99 @@
+.church_social_calendar {
+    margin: 25px 0;
+
+    &__title {}
+
+    &__controls {
+        margin: 0 0 10px 0;
+        position: relative;
+        text-align: right;
+        font-size: 0;
+        line-height: 0;
+    }
+
+    &__controls_link {
+        @extend .button;
+        margin: 0 0 0 5px;
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    &__day {
+        width: 14.2857142857143%;
+        vertical-align: top;
+        border: darken(#cec7ab, 10%) dotted 1px;
+    }
+
+    &__day--blank {
+        background: none;
+    }
+
+    &__day--today {
+        background: lighten(#cec7ab, 22%);
+    }
+
+    &__day--today &__day_number {
+        color: lighten(#746a53, 5%);
+    }
+
+    &__day_wrap {
+        position: relative;
+        min-height: 60px;
+        padding: 20px 8px 8px 8px;
+        font-size: 11px;
+        line-height: 1.15;
+    }
+
+    &__day_number {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 16px;
+        color: lighten(#746a53, 15%);
+        padding: 6px 6px 0 0;
+    }
+
+    &__event {
+        position: relative;
+        margin: 8px 0 0 0;
+        color: #746a53;
+    }
+
+    &__event_link {
+        color: #746a53 !important;
+        text-decoration: none !important;
+
+        &:hover {
+            text-decoration: underline !important;
+        }
+    }
+
+    &__event_title {}
+
+    &__event_sub_title {}
+
+    &__event_sub_title--date {}
+
+    &__event_details {}
+
+    &__event_details--date {}
+
+    &__event_sub_title--location {}
+
+    &__event_details--location {}
+
+    &__event_sub_title--description {}
+
+    &__event_details--description {}
+
+    &__event_buttons {}
+
+    &__event_back_button {
+        @extend .button;
+        margin-top: 15px;
+    }
+}

@@ -20,8 +20,9 @@
         font-family: TrajanProBold;
         font-weight: normal;
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         font-size: 30px;
-        line-height: 100%;
+        line-height: 1;
         font-weight: normal;
         color: #3c2d23;
 
@@ -32,15 +33,25 @@
     }
 
     h2 {
-        position: relative;
-        top: 10px;
-        margin: 25px 0 25px 0;
+        margin: 25px 0;
         font-family: TrajanProBold;
         font-weight: normal;
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         color: #3c2d23;
         font-size: 19px;
-        line-height: 100%;
+        line-height: 1;
+    }
+
+    h3 {
+        margin: 25px 0 15px 0;
+        color: #3c2d23;
+        font-size: 16px;
+        line-height: 1;
+    }
+
+    p {
+        margin: 15px 0;
     }
 
     .alignnone {
